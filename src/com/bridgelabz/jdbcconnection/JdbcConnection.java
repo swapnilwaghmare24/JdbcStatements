@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class JdbcConnection {
 
-    public void getConnection()
+    public static Connection getConnection()
     {
         String jdbcPath = "jdbc:mysql://localhost:3306/payroll_service";
         String userName = "root";
@@ -24,6 +24,7 @@ public class JdbcConnection {
             System.out.println("unable to connect to database");
             e.printStackTrace();
         }
+        return con;
     }
 
 }

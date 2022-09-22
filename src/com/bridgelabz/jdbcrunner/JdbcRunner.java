@@ -1,6 +1,7 @@
 package com.bridgelabz.jdbcrunner;
 
 import com.bridgelabz.jdbcconnection.JdbcConnection;
+import com.bridgelabz.payrollservice.PayrollService;
 
 public class JdbcRunner
 {
@@ -8,5 +9,7 @@ public class JdbcRunner
     {
         JdbcConnection jdbcConnection = new JdbcConnection();
         jdbcConnection.getConnection();
+        PayrollService payrollService=new PayrollService();
+        payrollService.getData();
     }
 }
