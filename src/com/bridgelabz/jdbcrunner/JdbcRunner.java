@@ -11,6 +11,7 @@ public class JdbcRunner
         jdbcConnection.getConnection();
         PayrollService payrollService=new PayrollService();
         payrollService.getData();
-        payrollService.updateSalaryStatement(1,5000000);
+       // payrollService.updateSalaryStatement(1,5000000);
+        payrollService.updateSalaryPreparedStatement(4,200000);
     }
 }
