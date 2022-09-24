@@ -89,5 +89,26 @@ public class PayrollService {
 
     }
 
+    public void getEmpDataByJoinDate(String startDate, String endDate) {
+        Connection connection = JdbcConnection.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement("select * from employee_tbl where join_date between CAST(? AS DATE) AND CAST(? AS DATE);");
+            ps.setString(1, startDate);
+            ps.setString(2, endDate);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                System.out.print(rs.getInt("emp_id") + "\t");
+                System.out.print(rs.getString("emp_name") + "\t");
+                System.out.print(rs.getString("join_date") + "\t");
+                System.out.print(rs.getString("gender") + "\t");
+                System.out.println();
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

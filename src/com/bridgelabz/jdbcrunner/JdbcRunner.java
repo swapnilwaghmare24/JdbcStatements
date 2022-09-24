@@ -12,6 +12,7 @@ public class JdbcRunner
         PayrollService payrollService=new PayrollService();
         payrollService.getData();
        // payrollService.updateSalaryStatement(1,5000000);
-        payrollService.updateSalaryPreparedStatement(4,200000);
+        // payrollService.updateSalaryPreparedStatement(4,200000);
+        payrollService.getEmpDataByJoinDate("2019-01-01","2021-01-01");
     }
 }
