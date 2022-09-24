@@ -11,5 +11,6 @@ public class JdbcRunner
         jdbcConnection.getConnection();
         PayrollService payrollService=new PayrollService();
         payrollService.getData();
+        payrollService.updateSalaryStatement(1,5000000);
     }
 }
